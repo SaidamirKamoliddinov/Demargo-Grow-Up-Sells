@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demargo | Raqamli Logistika va Xalqaro Yuk Tashish Platformasi</title>
+  <meta name="description" content="Texnologiyaga asoslangan va mutaxassislar tomonidan yetkazib beriladigan mukofotga sazovor logistika xizmatlari. Biznesingiz uchun xarajatlarni tejash va taktik yaxshilanishlar." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2306B6D4'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-boxes-packing"></i>
+        </div>
+        <span class="brand-name">Demargo<span class="brand-dot">.</span></span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Home</a></li>
+        <li><a href="#develop" class="nav-link" data-i18n="nav_develop">Developers</a></li>
+        <li><a href="#calculator" class="nav-link" data-i18n="nav_calculator">Rate Calculator</a></li>
+        <li><a href="#logistics" class="nav-link" data-i18n="nav_logistics">Logistics</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Language Switcher Select -->
+        <div class="lang-select-wrapper">
+          <select id="lang-select" class="lang-select" onchange="setLanguage(this.value)">
+            <option value="uz">🇺🇿 O'zbekcha</option>
+            <option value="ru">🇷🇺 Русский</option>
+            <option value="en">🇬🇧 English</option>
+          </select>
+        </div>
+
+        <a href="#calculator" class="btn btn-secondary" data-i18n="btn_book">Yukni Band Qilish</a>
+        <a href="#develop" class="btn btn-primary btn-glow" data-i18n="btn_start">Boshlash</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text" data-i18n="hero_badge">Yangi Avlod Raqamli Logistika Platformasi</span>
+        </div>
+        
+        <h1 class="hero-title" data-i18n="hero_title">
+          Mukofotga sazovor logistika xizmatlari. Texnologiya va mutaxassislar integratsiyasi.
+        </h1>
+        
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Kompaniyalar ta'minot zanjiridagi nosozliklar sabab har kuni mablag' yo'qotmoqda. Demargo xarajatlarni tejash va taktik yaxshilanishlarni ta'minlaydigan raqamli freight forwarding orqali potensialingizni ochib beradi.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#calculator" class="btn btn-primary btn-lg btn-glow">
+            <span data-i18n="hero_btn_network">Logistika Tarmog'imizni Ko'rish</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#develop" class="btn btn-glass btn-lg">
+            <i class="fa-solid fa-circle-play"></i>
+            <span data-i18n="hero_btn_demo">Videoni Tomosha Qilish</span>
+          </a>
+        </div>
+
+        <!-- Metric Cards Grid -->
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <div class="metric-number" data-target="99.8">0%</div>
+            <div class="metric-label" data-i18n="metric_ontime">O'z Vaqtida Yetkazish</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-target="2.8">$0B+</div>
+            <div class="metric-label" data-i18n="metric_volume">Boshqarilgan Yuk Hajmi</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" data-target="180">0+</div>
+            <div class="metric-label" data-i18n="metric_ports">Qamrab Olingan Portlar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-wrapper">
+          <img src="assets/hero.png" alt="Demargo Digital Supply Chain Dashboard" class="hero-img" />
+          
+          <!-- Floating Status Cards -->
+          <div class="glass-card float-card float-card-1">
+            <div class="float-icon green"><i class="fa-solid fa-ship"></i></div>
+            <div class="float-info">
+              <span class="float-title" data-i18n="float_vessel">Kema #DM-8892</span>
+              <span class="float-desc" data-i18n="float_status">Holati: Yo'lda • Jadvallarga muvofiq</span>
+            </div>
+            <span class="badge-status success" data-i18n="status_live">Jonli</span>
+          </div>
+
+          <div class="glass-card float-card float-card-2">
+            <div class="float-icon blue"><i class="fa-solid fa-calculator"></i></div>
+            <div class="float-info">
+              <span class="float-title" data-i18n="float_customs">Bojxona Rasmiylashtirildi</span>
+              <span class="float-desc" data-i18n="float_tariff">Avtomatik Tarif Optimizatsiyasi</span>
+            </div>
+            <span class="badge-status info">-32% Xarajat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Logos Marquee -->
+  <section class="partners-section">
+    <div class="container">
+      <p class="partners-title" data-i18n="partners_title">DUNYO BO'YLAB SOHADAGI ETAKCHILAR ISHONCHI</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <div class="partner-item"><i class="fa-solid fa-boxes-stacked"></i> FLEXPORT</div>
+          <div class="partner-item"><i class="fa-solid fa-truck-fast"></i> FEDEX GLOBAL</div>
+          <div class="partner-item"><i class="fa-solid fa-plane-departure"></i> DHL EXPRESS</div>
+          <div class="partner-item"><i class="fa-solid fa-anchor"></i> MAERSK LINE</div>
+          <div class="partner-item"><i class="fa-brands fa-amazon"></i> AMAZON FREIGHT</div>
+          <div class="partner-item"><i class="fa-solid fa-warehouse"></i> DP WORLD</div>
+          <!-- Repeat for infinite marquee -->
+          <div class="partner-item"><i class="fa-solid fa-boxes-stacked"></i> FLEXPORT</div>
+          <div class="partner-item"><i class="fa-solid fa-truck-fast"></i> FEDEX GLOBAL</div>
+          <div class="partner-item"><i class="fa-solid fa-plane-departure"></i> DHL EXPRESS</div>
+          <div class="partner-item"><i class="fa-solid fa-anchor"></i> MAERSK LINE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOP SECTION (As highlighted in Figma design) -->
+  <section class="section develop-section" id="develop">
+    <div class="container grid grid-2">
+      <div class="develop-content">
+        <div class="pill-tag"><i class="fa-solid fa-code"></i> DEVELOP</div>
+        <h2 class="section-title" data-i18n="dev_title">
+          Yagona kod bazasi bilan barcha foydalanuvchilar qurilmalari uchun ishlab chiqing.
+        </h2>
+        <p class="section-desc" data-i18n="dev_desc">
+          Hot reload, haqiqiy native imkoniyatlar va ijodingizni qo'shing — qisqa vaqt ichida foydalanuvchilaringiz xohlagan ilovaga ega bo'lasiz. Yuk ma'lumotlari va buyurtmalarni kuzatish API'larini muammosiz birlashtiring.
+        </p>
+
+        <a href="#develop" class="link-btn">
+          <span data-i18n="dev_learn_more">Ilova/dasturlash haqida ko'proq bilib oling</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+
+        <!-- Code Snippet Tabs -->
+        <div class="code-editor glass-card">
+          <div class="code-header">
+            <div class="code-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="code-tabs">
+              <button class="code-tab active" onclick="switchCodeTab('js')">Node.js</button>
+              <button class="code-tab" onclick="switchCodeTab('py')">Python</button>
+              <button class="code-tab" onclick="switchCodeTab('curl')">cURL</button>
+            </div>
+            <button class="btn-copy" onclick="copyCode()" aria-label="Copy Code">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+          <div class="code-body">
+            <pre id="code-js"><code><span class="kwd">import</span> { DemargoClient } <span class="kwd">from</span> <span class="str">'@demargo/sdk'</span>;
+
+<span class="kwd">const</span> client = <span class="kwd">new</span> DemargoClient({ apiKey: process.env.DEMARGO_KEY });
+
+<span class="com">// Create instant freight dispatch</span>
+<span class="kwd">const</span> shipment = <span class="kwd">await</span> client.shipments.create({
+  origin: <span class="str">'USLAX'</span>, <span class="com">// Port of Los Angeles</span>
+  destination: <span class="str">'NLTAM'</span>, <span class="com">// Port of Rotterdam</span>
+  cargoType: <span class="str">'OCEAN_FCL_40HC'</span>,
+  autoCustoms: <span class="kwd">true</span>
+});
+
+console.log(<span class="str">`Shipment active: ${shipment.trackingId}`</span>);</code></pre>
+            <pre id="code-py" class="hidden"><code><span class="kwd">from</span> demargo <span class="kwd">import</span> DemargoSDK
+
+client = DemargoSDK(api_key=<span class="str">"dm_live_secret_9981"</span>)
+
+# Query instant freight routing & tariffs
+routing = client.freight.get_optimal_route(
+    origin=<span class="str">"USLAX"</span>,
+    destination=<span class="str">"NLTAM"</span>,
+    weight_kg=12500
+)
+
+print(f<span class="str">"Estimated ETA: {routing.eta_days} days"</span>)</code></pre>
+            <pre id="code-curl" class="hidden"><code>curl -X POST https://api.demargo.com/v1/shipments \
+  -H <span class="str">"Authorization: Bearer dm_live_secret_9981"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{"origin": "USLAX", "destination": "NLTAM", "type": "AIR"}'</span></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="develop-visual">
+        <div class="visual-card-wrapper">
+          <img src="assets/develop.png" alt="Developer SDK Integration" class="develop-img" />
+          <div class="glass-card feature-badge float-badge">
+            <i class="fa-solid fa-bolt text-cyan"></i>
+            <div>
+              <strong data-i18n="badge_latency">Sub-10ms API Latency</strong>
+              <small data-i18n="badge_nodes">Global Edge Webhook Nodes</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Freight Calculator Section -->
+  <section class="section calculator-section" id="calculator">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="pill-tag"><i class="fa-solid fa-calculator"></i> INSTANT QUOTE</div>
+        <h2 class="section-title" data-i18n="calc_title">Yuk Narxlari va Yetkazish Vaqtini Hisoblash</h2>
+        <p class="section-desc" data-i18n="calc_subtitle">Dengiz, havo va quruqlik yo'llari bo'yicha shaffof narxlarni darhol oling.</p>
+      </div>
+
+      <div class="calc-card glass-card">
+        <div class="calc-form">
+          <div class="form-group">
+            <label><i class="fa-solid fa-truck-ramp-box"></i> <span data-i18n="label_mode">Yetkazib Berish Usuli</span></label>
+            <select id="calc-mode" class="form-input" onchange="calculateFreight()">
+              <option value="ocean" data-i18n="opt_ocean">Dengiz Yuklari (FCL / LCL)</option>
+              <option value="air" data-i18n="opt_air">Havo Ekspress Yuklari</option>
+              <option value="road" data-i18n="opt_road">Avtomobil va Ichki Tashuvlar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-location-dot"></i> <span data-i18n="label_origin">Jo'nash Porti / Shahri</span></label>
+            <select id="calc-origin" class="form-input" onchange="calculateFreight()">
+              <option value="USLAX">Los Angeles, USA (USLAX)</option>
+              <option value="CNSHA">Shanghai, China (CNSHA)</option>
+              <option value="DEHAM">Hamburg, Germany (DEHAM)</option>
+              <option value="SGSIN">Singapore (SGSIN)</option>
+              <option value="UZTAS">Tashkent, Uzbekistan (UZTAS)</option>
+              <!-- Russian Ports & Cities -->
+              <option value="RUMOW">Moscow, Russia (RUMOW)</option>
+              <option value="RULED">Saint Petersburg, Russia (RULED)</option>
+              <option value="RUVLA">Vladivostok, Russia (RUVLA)</option>
+              <option value="RUNOV">Novorossiysk, Russia (RUNOV)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-flag-checkered"></i> <span data-i18n="label_dest">Manzil Porti / Shahri</span></label>
+            <select id="calc-dest" class="form-input" onchange="calculateFreight()">
+              <option value="NLTAM">Rotterdam, Netherlands (NLTAM)</option>
+              <option value="USNYC">New York, USA (USNYC)</option>
+              <option value="AEJEA">Jebel Ali, Dubai (AEJEA)</option>
+              <option value="GBFXT">Felixstowe, UK (GBFXT)</option>
+              <option value="UZTAS">Tashkent, Uzbekistan (UZTAS)</option>
+              <!-- Russian Ports & Cities -->
+              <option value="RUMOW">Moscow, Russia (RUMOW)</option>
+              <option value="RULED">Saint Petersburg, Russia (RULED)</option>
+              <option value="RUVLA">Vladivostok, Russia (RUVLA)</option>
+              <option value="RUNOV">Novorossiysk, Russia (RUNOV)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-weight-hanging"></i> <span data-i18n="label_weight">Jami Vazn (KG)</span></label>
+            <input type="number" id="calc-weight" class="form-input" value="2500" min="100" max="50000" oninput="calculateFreight()" />
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <div class="result-header">
+            <span data-i18n="res_est_cost">Hisoblangan Yuk Qiymati</span>
+            <span class="badge-status success"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="res_guaranteed">Kafolatlangan Tarif</span></span>
+          </div>
+
+          <div class="price-display">
+            <span class="currency">$</span>
+            <span id="result-price" class="amount">1,840</span>
+            <span class="unit">USD</span>
+          </div>
+
+          <div class="result-details">
+            <div class="detail-item">
+              <i class="fa-solid fa-clock text-cyan"></i>
+              <div>
+                <small data-i18n="res_transit">Taxminiy Transit Vaqti</small>
+                <strong id="result-days">14 - 18 Kun</strong>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-leaf text-green"></i>
+              <div>
+                <small data-i18n="res_co2">Uglerod Tejamkorligi Score</small>
+                <strong id="result-co2">-42% CO2 Chiqindi</strong>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-glow" onclick="bookQuote()">
+            <span data-i18n="res_btn_reserve">Yuk Joyini Hozir Band Qilish</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Network & Analytics Section -->
+  <section class="section network-section" id="logistics">
+    <div class="container">
+      <div class="grid grid-2 items-center">
+        <div class="network-visual">
+          <img src="assets/supply_chain.png" alt="Global Supply Chain Map" class="network-img glass-card" />
+        </div>
+        <div class="network-content">
+          <div class="pill-tag"><i class="fa-solid fa-globe"></i> GLOBAL NETWORK</div>
+          <h2 class="section-title" data-i18n="net_title">180+ Xalqaro Savdo Yo'nalishlarida To'liq Shaffoflik</h2>
+          <p class="section-desc" data-i18n="net_desc">
+            Qorong'i nuqtalar qolmadi. Real-vaqt rejimida IoT datchiklari va kelajakdagi kelish vaqtini bashorat qiluvchi ETA algoritmlari bilan kema, aviatashuv va yuk mashinasi yo'nalishlarini kuzating.
+          </p>
+
+          <div class="feature-list" id="features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+              <div>
+                <h4 data-i18n="feat_1_title">Jonli GPS va Harorat Telemetriyasi</h4>
+                <p data-i18n="feat_1_desc">Nozik va muzlatilgan yuklarni real-vaqtdagi harorat ogohlantirishlari bilan nazorat qiling.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-file-contract"></i></div>
+              <div>
+                <h4 data-i18n="feat_2_title">Avtomatlashtirilgan Bojxona Rasmiylashtiruvi</h4>
+                <p data-i18n="feat_2_desc">Sun'iy intellect (AI) yordamida HS Code tasniflashi bojxona ushlanib qolishlarini 65% dan ortiqqa kamaytiradi.</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div>
+                <h4 data-i18n="feat_3_title">Tirbandlikni Prognoz Qilish va Marshrutlash</h4>
+                <p data-i18n="feat_3_desc">Tashuvchilarni avtomatik o'zgartirish orqali portlardagi kechikishlarni aylanib o'ting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="pill-tag"><i class="fa-solid fa-circle-question"></i> FREQUENTLY ASKED</div>
+        <h2 class="section-title" data-i18n="faq_title">Savollaringiz Bormi? Bizda Javoblar Bor.</h2>
+        <p class="section-desc" data-i18n="faq_desc">Demargo Raqamli Logistikaga o'tish bo'yicha bilishingiz kerak bo'lgan barcha narsalar.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q1">Demargo qanday qilib an'anaviy ekspeditorlarga qaraganda arzonroq narxlarni kafolatlaydi?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">Demargo dengiz tashuvchilari va havo yuklari provayderlari bilan eng yaxshi tariflarni kelishish uchun minglab jo'natuvchilar yuk hajmini birlashtiradi. Bizning avtomatlashtirilgan tizimimiz vositachilar ustama haqini yo'qotadi.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q2">Dasturchilar Demargo API'sini qanchalik tez ulashi mumkin?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a2">Ko'pgina dasturlash jamoalari 2 soatdan kamroq vaqt ichida integratsiya qiladi. Biz Node.js, Python, Go va PHP uchun tayyor SDK kutubxonalarini taqdim etamiz.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q3">Bojxona hujjatlari va boj to'lovlarini ham hal qilasizmi?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq_a3">Ha! Tizimimiz kotirovkalar, konosament (bill of lading), tijorat hisob-fakturalarini avtomatik shakllantiradi hamda AQSH, Yevropa va Osiyo bojxona organlariga to'g'ridan-to'g'ri topshiradi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box glass-card text-center">
+        <h2 data-i18n="cta_title">Xalqaro ta'minot zanjiringizni o'zgartirishga tayyormisiz?</h2>
+        <p data-i18n="cta_subtitle">Demargo bilan aqlli, tezroq va arzonroq yuk tashiyotgan 4,500+ korxonalarga qo'shiling.</p>
+        <div class="cta-form">
+          <input type="email" placeholder="Ishchi pochtangizni kiriting" class="cta-input" data-i18n-placeholder="cta_placeholder" />
+          <button class="btn btn-primary btn-glow" data-i18n="cta_btn">Bepul Audit So'rash</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container grid grid-4">
+      <div class="footer-col">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+          <span class="brand-name">Demargo<span class="brand-dot">.</span></span>
+        </a>
+        <p class="footer-desc" data-i18n="footer_desc">Texnologiyaga asoslangan va mutaxassislar tomonidan yetkazib beriladigan mukofotga sazovor logistika xizmatlari.</p>
+        <div class="social-links">
+          <a href="https://t.me/Saidamir_7" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://www.instagram.com/kamoliddinovv__s7?igsh=MXVjNTBrMWozams1eg==" target="_blank" aria-label="Instagram" class="instagram-link"><i class="fa-brands fa-instagram text-instagram"></i></a>
+          <a href="mailto:saidamirkamoliddinov@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+998949902757" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer_col_solutions">Yechimlar</h4>
+        <ul>
+          <li><a href="#" data-i18n="foot_ocean">Dengiz Yuklari (FCL/LCL)</a></li>
+          <li><a href="#" data-i18n="foot_air">Havo Ekspress Yuklari</a></li>
+          <li><a href="#" data-i18n="foot_road">Quruqlik Logistikasi</a></li>
+          <li><a href="#" data-i18n="foot_3pl">Omborxona va 3PL</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer_col_devs">Dasturchilar</h4>
+        <ul>
+          <li><a href="#">API Hujjatlari</a></li>
+          <li><a href="#">SDK Kutubxonalari</a></li>
+          <li><a href="#">Webhook Voqealari</a></li>
+          <li><a href="#">Tizim Holati</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer_col_contact">Dasturchi Aloqasi</h4>
+        <ul>
+          <li><a href="https://t.me/Saidamir_7" target="_blank"><i class="fa-brands fa-telegram text-cyan"></i> Telegram: @Saidamir_7</a></li>
+          <li><a href="https://www.instagram.com/kamoliddinovv__s7?igsh=MXVjNTBrMWozams1eg==" target="_blank"><i class="fa-brands fa-instagram text-instagram"></i> Instagram: kamoliddinovv__s7</a></li>
+          <li><a href="mailto:saidamirkamoliddinov@gmail.com"><i class="fa-solid fa-envelope text-cyan"></i> Email: saidamirkamoliddinov@gmail.com</a></li>
+          <li><a href="tel:+998949902757"><i class="fa-solid fa-phone text-green"></i> +998 94 990 27 57</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center">
+      <p>&copy; 2026 Demargo Logistics Inc. All rights reserved. Developed by <strong>Saidamir Kamoliddinov (@Saidamir_7)</strong>.</p>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
